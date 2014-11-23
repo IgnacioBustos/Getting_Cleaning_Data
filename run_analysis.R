@@ -31,6 +31,7 @@ datamergesubject <- rbind(datatrainsubject, datatestsubject)
 features <- read.table("../UCI HAR Dataset/features.txt")
 data_mean <- grep("-mean\\(\\)|-std\\(\\)", features[, 2])
 datamergeX <- datamergeX[, data_mean]
+
 names(datamergeX) <- features[data_mean, 2]
 names(datamergeX) <- gsub("\\(|\\)", "", names(datamergeX))
 names(datamergeX) <- tolower(names(datamergeX))
